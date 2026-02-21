@@ -2,6 +2,7 @@
 #include "gpu_memory_management.h"
 #include <cstdio>
 #include <iostream>
+#include <cuda_runtime_api.h> 
 
 std::uint32_t get_NN_upscaled_width(std::uint32_t image_width){
     return image_width * 3;

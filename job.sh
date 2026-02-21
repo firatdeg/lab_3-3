@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #SBATCH -J parprog
-#SBATCH -e /work/scratch/kurse/kurs00093/<md15cowe>/stderr/stderr.parprog.%j.txt
-#SBATCH -o /work/scratch/kurse/kurs00093/<md15cowe>/stdout/stdout.parprog.%j.txt
+#SBATCH -e /work/scratch/kurse/kurs00093/md15cowe/stderr/stderr.parprog.%j.txt
+#SBATCH -o /work/scratch/kurse/kurs00093/md15cowe/stdout/stdout.parprog.%j.txt
 #SBATCH -C avx512
 #SBATCH -n 1
 #SBATCH --mem-per-cpu=1024

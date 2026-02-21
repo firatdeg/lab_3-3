@@ -25,16 +25,13 @@ __global__ void lin_upscale_kernel(const double* __restrict__ source, double* __
         std::uint32_t sy = dy / 2;
 
         if (x_even && y_even) {
-            // Orijinal piksel
+            
             result[dy * dst_w + dx] = source[sy * src_w + sx];
         } else if (!x_even && y_even) {
-            // Yatay eksende (sol ve sağ) interpolasyon
             result[dy * dst_w + dx] = (source[sy * src_w + sx] + source[sy * src_w + sx + 1]) / 2.0;
         } else if (x_even && !y_even) {
-            // Dikey eksende (üst ve alt) interpolasyon
             result[dy * dst_w + dx] = (source[sy * src_w + sx] + source[(sy + 1) * src_w + sx]) / 2.0;
         } else {
-            // Çapraz (4 komşu) interpolasyon
             double tl = source[sy * src_w + sx];
             double tr = source[sy * src_w + sx + 1];
             double bl = source[(sy + 1) * src_w + sx];
